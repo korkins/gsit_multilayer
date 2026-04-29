@@ -28,6 +28,7 @@ Case 4 is atmosphere from the Case 3 + surface (new Monte-Carlo results were gen
 LOA (level of atmosphere) is defined at 1km in the mentioned published benchmark (note, the benchmark is polarized, but I re-run Monte-Carlo with polarization turned OFF).
 
 TREE & LOC:
+
 main_gsit # reads input, runs gsit(), tests vs. benchmarks
         |
         +-gauszw( 25 ) # Gaussian zeros and weights
@@ -58,4 +59,5 @@ main_gsit # reads input, runs gsit(), tests vs. benchmarks
 LOC = 25 + 14 + 49 + 13 + 14 + 10 + 2 + 21 + 25 + 47 + 8 + 2 = 230
 
 REFERENCES:
+
 Theoretical background for this Gauss-Seidel RT code (single layer version) is described here: https://doi.org/10.1016/j.cpc.2021.108198
