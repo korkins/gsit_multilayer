@@ -46,7 +46,7 @@ In `main_gsit.py`, **line 11**, select one of four benchmark test cases:
 
 ---
 
-## Code Structure (TREE & LOC)
+## Code Structure (Tree & LOC)
 
 ```
 main_gsit
@@ -83,7 +83,7 @@ The theoretical background for the GSIT method (single-layer formulation) is des
 
 * TOA: Top of Atmosphere
 
-* LOA: Level within Atmosphere (1 km)
+* LOA: Level of Atmosphere (1 km)
 
 * BOA: Bottom of Atmosphere
 
