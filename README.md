@@ -49,7 +49,7 @@ main_gsit # reads input, runs gsit(), tests vs. benchmarks
         +-srcfintup( 25 ) # Source function integration upward
         |
         +-sglscat( 47 ) # Exact single scattering
-                |
+               |
                 +-sglscatdn( 8 ) # single scattering at BOA of a homogeneous layer
                 |
                 +-sglscatup( 2 ) # single scattering at TOA of a homogeneous layer
