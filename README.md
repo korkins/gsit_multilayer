@@ -39,7 +39,7 @@ In `main_gsit.py`, **line 11**, select one of four benchmark test cases:
 ## Benchmark Notes
 
 * Errors are computed against the Monte Carlo model **MYSTIC** (part of libRadtran: https://www.libradtran.org).
-* Cases 1–3 correspond to benchmark cases B1–B3 from the IPRT intercomparison.
+* Cases 1–3 correspond to benchmark cases B1–B3 from the IPRT intercomparison (https://www.meteo.physik.uni-muenchen.de/~iprt/doku.php?id=intercomparisons:intercomparisons).
 * Case 4 extends Case 3 by adding a Lambertian surface (new Monte Carlo results).
 * **LOA (Level of Atmosphere)** is defined at **1 km**.
 * The original benchmark includes polarization; here, Monte Carlo simulations were performed with **polarization disabled**.
