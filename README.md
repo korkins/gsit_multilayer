@@ -53,7 +53,7 @@ main_gsit                             # reads input, runs gsit(), tests vs. benc
         |
         +-gsit (57)                   # interface for RT code
              |
-             +-gauszw (25)            # Gaussian zeros and weights
+             +-gauszw (25)            # Gauss quadrature nodes (zeros) and weights
              |
              +-splittau (14)          # Splits input atmospheric (optical) layers into element layers of dtau < dtau_max
              |
