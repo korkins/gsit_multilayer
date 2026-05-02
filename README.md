@@ -49,25 +49,44 @@ In `main_gsit.py`, **line 11**, select one of four benchmark test cases:
 ## Code Structure (Tree & LOC)
 
 ```
-main_gsit
-│
-├── gauszw (25)        # Gaussian nodes and weights
-├── splittau (14)      # Splits layers into elements (dtau < dtau_max)
-├── gsitm (49)         # Fourier moments via Gauss-Seidel iterations
-│   ├── polleg (13)    # Legendre polynomials Pk(x)
-│   ├── polqkm (14)    # Associated polynomials Qkm(x)
-│   ├── sglscatdnm (10)# Single scattering (downward, BOA)
-│   └── sglscatupm (2) # Single scattering (upward, TOA)
-│
-├── srcfintdn (21)     # Source function integration (downward)
-├── srcfintup (25)     # Source function integration (upward)
-│
-└── sglscat (47)       # Exact single scattering
-    ├── sglscatdn (8)  # Downward
-    └── sglscatup (2)  # Upward
+main_gsit                             # reads input, runs gsit(), tests vs. benchmarks
+        |
+        +-gsit (57)                   # interface for RT code
+             |
+             +-gauszw (25)            # Gaussian zeros and weights
+             |
+             +-splittau (14)          # Splits input atmospheric (optical) layers into element layers of dtau < dtau_max
+             |
+             +-gsitm (49)             # m-th Fourier order of intensity (all scatterings) at Gauss nodes and all levels
+             |     |
+             |     +-polleg (13)      # Legendre polynomials, Pk(x)
+             |     |
+             |     +-polqkm (14)      # Associated polynomials, Qkm(x)
+             |     |
+             |     +-sglscatdnm (10)  # m-th Fourier moment in single scattering at BOA of a homogeneous layer
+             |     |
+             |     +-sglscatupm (2)   # m-th Fourier moment in single scattering at TOA of a homogeneous layer
+             |
+             +-srcfintdn (21)         # Source function integration downward
+             |         |
+             |         +-polleg
+             |         |
+             |         +-polqkm
+             |
+             +-srcfintup (25)         # Source function integration upward
+             |         |
+             |         +-polleg
+             |         |
+             |         +-polqkm
+             |
+             +-sglscat (47)           # Exact single scattering
+                     |
+                     +-sglscatdn (8)  # single scattering at BOA of a homogeneous layer
+                     |
+                     +-sglscatup (2)  # single scattering at TOA of a homogeneous layer
 ```
 
-**Total executable lines of code (LOC): 230**
+**Total executable lines of code (LOC): 287**
 
 ---
 
