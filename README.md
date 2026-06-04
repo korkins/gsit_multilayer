@@ -55,7 +55,7 @@ main_gsit                             # reads input, runs gsit(), tests vs. benc
              |
              +-gauszw (25)            # Gauss quadrature nodes (zeros) and weights
              |
-             +-splittau (14)          # Splits input atmospheric (optical) layers into element layers of dtau < dtau_max
+             +-splittau (13)          # Splits input atmospheric (optical) layers into element layers of dtau < dtau_max
              |
              +-gsitm (49)             # m-th Fourier order of intensity (all scatterings) at Gauss nodes and all levels
              |     |
@@ -86,7 +86,7 @@ main_gsit                             # reads input, runs gsit(), tests vs. benc
                      +-sglscatup (2)  # single scattering at TOA of a homogeneous layer
 ```
 
-**Total executable lines of code (LOC): 287**
+**Total executable lines of code (LOC): 286**
 
 ---
 
