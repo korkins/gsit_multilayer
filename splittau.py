@@ -26,26 +26,25 @@ def splittau(dtau_max, tau, nlr):
         1. -
     '''
     
-    # define the number of element layers
     nelem = 0
+    ndtau = np.zeros(nlr, dtype=np.int32)
     for ilr in range(nlr):
-        nelem += int(np.ceil(tau[ilr]/dtau_max))
-        
+        nel = int(np.ceil(tau[ilr] / dtau_max))
+        ndtau[ilr] = nel
+        nelem += nel
+
     dtau = np.zeros(nelem)
     mask = np.zeros(nelem, dtype=np.int32)
-    ndtau = np.zeros(nlr, dtype=np.int32)
-
-    idxel = -1
+    
+    idxel = 0
     for ilr in range(nlr):
-        tau_ilr = tau[ilr]
-        nel = int(np.ceil(tau_ilr/dtau_max))
-        dtau_ilr = tau_ilr / nel
-        ndtau[ilr] = nel
+        nel = ndtau[ilr]
+        dtau_ilr = tau[ilr] / nel
         
         for iel in range(nel):
-            idxel += 1
             dtau[idxel] = dtau_ilr
             mask[idxel] = ilr
+            idxel += 1
 
     return nelem, dtau, mask, ndtau
 #==============================================================================
