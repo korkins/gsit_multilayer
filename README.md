@@ -49,44 +49,44 @@ In `main_gsit.py`, **line 11**, select one of four benchmark test cases:
 ## Code Structure (Tree & LOC)
 
 ```
-main_gsit                             # reads input, runs gsit(), tests vs. benchmarks
-        |
-        +-gsit (57)                   # interface for RT code
-             |
-             +-gauszw (25)            # Gauss quadrature nodes (zeros) and weights
-             |
-             +-splittau (13)          # Splits input atmospheric (optical) layers into element layers of dtau < dtau_max
-             |
-             +-gsitm (49)             # m-th Fourier order of intensity (all scatterings) at Gauss nodes and all levels
-             |     |
-             |     +-polleg (13)      # Legendre polynomials, Pk(x)
-             |     |
-             |     +-polqkm (14)      # Associated polynomials, Qkm(x)
-             |     |
-             |     +-sglscatdnm (10)  # m-th Fourier moment in single scattering at BOA of a homogeneous layer
-             |     |
-             |     +-sglscatupm (2)   # m-th Fourier moment in single scattering at TOA of a homogeneous layer
-             |
-             +-srcfintdn (21)         # Source function integration downward
-             |         |
-             |         +-polleg
-             |         |
-             |         +-polqkm
-             |
-             +-srcfintup (25)         # Source function integration upward
-             |         |
-             |         +-polleg
-             |         |
-             |         +-polqkm
-             |
-             +-sglscat (47)           # Exact single scattering
-                     |
-                     +-sglscatdn (8)  # single scattering at BOA of a homogeneous layer
-                     |
-                     +-sglscatup (2)  # single scattering at TOA of a homogeneous layer
+main_gsit    # reads input,  runs gauss_seidel_iterations(...), tests vs. benchmarks
+|
++-gauss_seidel_iterations (56)
+                        |
+                        +-gauss_nodes_weights (27)
+                        |
+                        +-split_optical_tau (19)
+                        |
+                        +-gauss_seidel_iterations_m (77)
+                        |                         |
+                        |                         +-legendre_polynomial (10)
+                        |                         |
+                        |                         +-schmidt_polynomial (16)
+                        |                         |
+                        |                         +-single_scattering_up_m (4)
+                        |                         |
+                        |                         +-single_scattering_down_m (13)
+                        |
+                        +-source_function_integrate_up (30)
+                        |                            |
+                        |                            +-legendre_polynomial
+                        |                            |
+                        |                            +-schmidt_polynomial
+                        |
+                        +-source_function_integrate_down (26)
+                        |                              |
+                        |                              +-legendre_polynomial
+                        |                              |
+                        |                              +-schmidt_polynomial
+                        |
+                        +-single_scattering (58)
+                                          |
+                                          +-single_scattering_up (4)
+                                          |
+                                          +-single_scattering_down (10)
 ```
 
-**Total executable lines of code (LOC): 286**
+**Total executable lines of code (LOC): 350**
 
 ---
 
