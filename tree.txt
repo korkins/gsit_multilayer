@@ -1,0 +1,38 @@
+main_gsit    # reads input,  runs gauss_seidel_iterations(...), tests vs. benchmarks
+|
++-gauss_seidel_iterations (56)
+                        |
+                        +-gauss_nodes_weights (27)
+                        |
+                        +-split_optical_tau (19)
+                        |
+                        +-gauss_seidel_iterations_m (77)
+                        |                         |
+                        |                         +-legendre_polynomial (10)
+                        |                         |
+                        |                         +-schmidt_polynomial (16)
+                        |                         |
+                        |                         +-single_scattering_up_m (4)
+                        |                         |
+                        |                         +-single_scattering_down_m (13)
+                        |
+                        +-source_function_integrate_up (30)
+                        |                            |
+                        |                            +-legendre_polynomial
+                        |                            |
+                        |                            +-schmidt_polynomial
+                        |
+                        +-source_function_integrate_down (26)
+                        |                              |
+                        |                              +-legendre_polynomial
+                        |                              |
+                        |                              +-schmidt_polynomial
+                        |
+                        +-single_scattering (58)
+                                          |
+                                          +-single_scattering_up (4)
+                                          |
+                                          +-single_scattering_down (10)
+
+
+LOC = 56 + 27 + 19 + 77 + 10 + 16 + 4 + 13 + 30 + 26 + 58 + 4 + 10 = 350
