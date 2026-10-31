@@ -95,7 +95,7 @@ main_gsit    # reads input,  runs gauss_seidel_iterations(...), tests vs. benchm
 The theoretical background for the GSIT method (single-layer formulation) is described in:
 
 * Korkin S, Sayer AM, Ibrahim A, Lyapustin A, A practical guide to writing a radiative transfer code,
-Computer Physics Communications, 271: 108198, 2022. https://doi.org/10.1016/j.cpc.2021.108198.
+_Computer Physics Communications_, 271: 108198, 2022. https://doi.org/10.1016/j.cpc.2021.108198.
 
 ---
 
